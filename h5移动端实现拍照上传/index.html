@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<title>H5拍照上传</title>
+	<script src="static/js/jquery.min.js"></script>
+</head>
+<body>
+	<input type="file" id="fileinput" class="inputfile" multiple accept="image/*;">
+    <img id="showimg" src="" alt="">
+	<script>
+    let imgList = [] // 存放图片
+    let fileinput = document.querySelector('#fileinput')
+    fileinput.addEventListener('change', function (e) {
+        addImg(e)
+    })
+
+    function addImg(e) {
+        e.preventDefault()
+        let files = e.target.files || e.dataTransfer.files
+        if (!files.length) return
+
+        const imgurl = files[0]
+        addImgPreview(imgurl)
+        // e.target.value = '' // 清除input数据
+    }
+
+    function addImgPreview(file) {
+        // 是否支持不支持FileReader
+        if (!file || !window.FileReader) return
+
+        if (/^image/.test(file.type)) {
+            // 创建一个reader
+            var reader = new FileReader()
+            // 将图片将转成 base64 格式,并保存在reader中
+            reader.readAsDataURL(file)
+            // 读取成功后的回调
+            reader.onload = function (oFREvent) {
+                var base64Url = oFREvent.target.result
+                var fileStreamSize = calculaFileSize(base64Url)
+                let compressAfterImgUrl = "";
+                let compressAfterImgSize = "";
+                let img = document.querySelector('#showimg');
+                let newImg = createNewImg(base64Url);
+                compressAfterImgUrl = compressImg(img,base64Url);
+                compressAfterImgSize = calculaFileSize(compressAfterImgUrl);
+                    img.src = compressAfterImgSize
+                    imgList.push(compressAfterImgSize)
+                // if (fileStreamSize >= 204800) {
+                //     try{ //图片过大可能压缩失败，抛出异常
+                //         compressAfterImgUrl = compressImg(img);
+                //         compressAfterImgSize = calculaFileSize(compressAfterImgUrl);
+                //         return
+                //     }catch(error){
+                //         compressAfterImgSize = base64Url
+                //         alert("上传的图片过大，无法压缩，使用原图");
+                //     }
+                //     let img = document.querySelector('#showimg')
+                //     img.src = compressAfterImgSize
+                //     imgList.push(compressAfterImgSize)
+                // }
+
+            }
+        } else {
+            alert(`文件${file.name}不是图片。`)
+        }
+    }
+
+    function compressImg(img,base64Url){  // 压缩图片
+    	console.log(base64Url);
+        let self = this
+        const maxSize = 200 * 1024; //200K
+        const maxWidth = 640; //设置最大宽度
+        const maxHeight = maxWidth; //设置最大高度
+        let canvas = document.createElement('canvas')
+        let ctx = canvas.getContext('2d')
+
+        if (img.height > maxHeight) {
+            //按最大高度等比缩放
+            img.width *= maxHeight / img.height;
+            img.height = maxHeight;
+        }
+        if (img.width > maxWidth) {
+            //按最大宽度等比缩放
+            img.height *= maxWidth / img.width;
+            img.width = maxWidth;
+        }
+        canvas.width = img.width
+        canvas.height = img.height
+
+        const fileSize = calculaFileSize(base64Url);
+        const compressRate = getCompressRate(maxSize, fileSize);
+        const mineType = getBase64Type(base64Url)
+        var data = canvas.toDataURL(mineType, 0.2) //data url的形式，压缩为20%
+        return data
+    }
+
+    function calculaFileSize(base64) {
+      // 计算base64文件流大小
+        base64 = base64.substring(22)
+        const equalIndex = base64.indexOf('=')
+        if (base64.indexOf('=') > 0) {
+            base64 = base64.substring(0, equalIndex)
+        }
+        var strLength = base64.length
+        var fileLength = parseInt(strLength - (strLength / 8) * 2)
+        return fileLength
+    }
+    function dataURLtoBlob(dataURL) {
+      // base64转化为blob对象
+      // 解码base64
+      var byteString = atob(dataURL.split(",")[1]);
+      var mimeString = dataURL
+        .split(",")[0]
+        .split(":")[1]
+        .split(";")[0];
+      // 类型数组
+      var ia = new Uint8Array(byteString.length);
+      for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+      }
+      return new Blob([ia], {
+        type: mimeString
+      });
+    }
+
+    function createNewImg(base64Url) {
+        // 创建一个新图像
+        const imgWidth = 640;
+        const imgHeight = 640;
+        let img = new Image();
+        img.src = base64Url;
+
+        if (!img.width || img.width == 0) {
+            // 有时图片会压缩失败出现无法获取的情况，也就没有宽和高
+            img.width = imgWidth;
+            img.height = imgHeight;
+        }
+
+        return img;
+    }
+    function getBase64Type(dataURL) {
+      // 获取base64图片类型
+      var mimeString = dataURL
+        .split(",")[0]
+        .split(":")[1]
+        .split(";")[0];
+      return mimeString;
+    }
+    function getCompressRate(allowMaxSize, fileSize) {
+        // 计算压缩比率，size单位为MB
+        let compressRate = 1;
+        if (fileSize / allowMaxSize > 4) {
+            compressRate = 0.5;
+        } else if (fileSize / allowMaxSize > 3) {
+            compressRate = 0.6;
+        } else if (fileSize / allowMaxSize > 2) {
+            compressRate = 0.7;
+        } else if (fileSize > allowMaxSize) {
+            compressRate = 0.8;
+        } else {
+            compressRate = 0.9;
+        }
+        return compressRate;
+    }
+</script>
+</html>
