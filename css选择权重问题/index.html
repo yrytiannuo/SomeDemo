@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>css选择权重</title>
+	<style>
+		#a #b #c #d #e #f #g #h #l #m #k{
+			color:red;
+		}
+		/*每一个id选择器的权重是100，十个呢？*/
+	</style>
+</head>
+<body>
+	<div id="a">
+		<div id="b">
+			<div id="c">
+				<div id="d">
+					<div id="e">
+						<div id="f">
+							<div id="g">
+								<div id="h">
+									<div id="l">
+										<div id="m">
+											<div class="k" style="color:green;"><!-- 行内权重为1000 -->
+												糯客作坊
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
