@@ -1,0 +1,9 @@
+.fortouch {
+    width: 2rem;
+    height: 2rem;
+    background: red;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    margin-left: -50px;
+}
