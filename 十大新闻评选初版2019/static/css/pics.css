@@ -1,0 +1,163 @@
+.content{
+	margin-top: 170px;
+	width: 100%;
+}
+.band{
+    width: 50%;
+    height: 50px;
+    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rule{
+	    display: inline-block;
+    width: 11%;
+    vertical-align: top;
+    height: 50px;
+    padding-right: 3%;
+    border-right: 4px solid #ffc722;
+}
+
+.text{
+		display: inline-block;
+    width: 82%;
+    padding-left: 3%;
+    font-size: 0.8rem;
+    color: #a6a6a6;
+}
+.navthird{
+	width:100%;
+	background-color: #363533;
+		height: 40px;
+		font-size:0;
+		margin-bottom: 50px;
+}
+.navthird span{
+	    text-align: center;
+	font-size: 0.8rem;
+display: inline-block;
+	width: 6%;
+	height: 40px;
+	    vertical-align: top;
+    line-height: 40px;
+    color: white;
+}
+.navthird span:nth-child(1){
+	width:20%;
+	background-color: #ffc722;
+	height: 40px;
+
+}
+.navthird span:nth-last-child(1){
+	width:20%;
+	background-color: #363533;
+	height: 40px;
+}
+.navthird span:nth-child(2){
+	width:6%;
+			background-color: #ffc722;
+			color: #363533;
+}
+.navthird .activepage{
+	background-color: white;
+	color: #ffc722;
+}
+.navthird .page{
+	width:4%;
+		color: white;
+		background-color: #ffc722;
+}
+.navthird .now{
+background-color:  #363533;
+}
+.main ul{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.main ul li{
+	display: inline-block;
+	width: 23%;
+	margin-left: auto;
+	margin-right: auto;
+	margin: 0px;
+	padding:0px;
+	box-shadow: 0px 5px 2px -5px#888888;
+	background-color: #ffffff;
+	margin-bottom: 70px;
+	position: relative;
+}
+.main ul li img{
+	display: block;
+	width: 96%;
+	height: 240px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 2%;
+    padding-left: 2%;
+}
+.main p{
+	margin: 10px;
+}
+.main ul li p:nth-child(3){
+	margin: 10px;
+	font-size: 0.8rem;
+	color: #919191;
+}
+
+.triangle{
+	width: 0;
+	height: 0;
+	border-top: 100px solid #363533;
+	border-right: 50px solid transparent;    
+position: absolute;
+    left: 2%;
+    top: 0px;
+    color: #ffc722;
+}
+
+.triangle .number{
+position: absolute;
+    top: -85px;
+    left: 12px;
+}
+
+.main ul li:hover .triangle{
+	width: 0;
+	height: 0;
+	border-top: 100px solid #ffc722;
+	border-right: 50px solid transparent;    
+position: absolute;
+    left: 2%;
+    top: 0px;
+    color: #363533;
+}
+
+.main ul li:hover .name{
+    color: #ffc722;
+}
+.main ul li:hover{
+transform: scale(1.05);
+}
+.trianglemore{
+	display: none;
+		width: 0;
+	height: 0;
+	border-bottom: 100px solid #ffc722;
+	border-left: 50px solid transparent;    
+position: absolute;
+    right: 2%;
+    top:  140px;
+    color: #363533;
+}
+.trianglemore .number{
+	    position: absolute;
+    bottom: -85px;
+    right: 12px;
+
+    color: #363533;
+}
+.main ul li:hover .trianglemore{
+	display: block;
+
+}

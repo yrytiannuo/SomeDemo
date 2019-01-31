@@ -1,0 +1,59 @@
+.main{
+		width: 20%;
+margin-right: auto;
+    margin-left: auto;
+
+	margin-top: 170px;
+	color: white;
+	z-index: 400;
+	padding-top: 24px;
+	padding-bottom: 10px;
+	position: relative;
+		text-align: center;
+		position: absolute;
+		right: 34%;
+}
+.main>p{
+	width: auto;
+	font-size: 1.2rem;
+	margin-bottom: 10px;
+	color:#595858;
+	text-align: right;
+}
+
+
+.subtitle{
+    text-align: right;
+margin-left: auto;
+margin-right: auto;
+color: #858585;
+}
+.subtitle::after{
+content: "";
+width: 100%;
+height: 1.2px;
+border-bottom: white 0.8px solid;
+display: block;
+clear:both;
+}
+ .text{
+	color: #664f0d;
+display: inline-block;
+margin: 0px;
+}
+.middle{
+	width:100%;
+	background: url(../imgs/bkyellow.png) ;
+	background-position: 100% 0%;
+background-repeat: no-repeat;
+background-size: 65% 100%;
+padding-top: 30px;
+padding-bottom: 50px;
+margin-bottom: 68px;
+}
+
+.middle img{
+	margin-top: 210px;
+	width: 30%;
+	margin-left: 10%;
+}

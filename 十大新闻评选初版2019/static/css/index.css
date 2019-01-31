@@ -1,0 +1,90 @@
+
+html{
+        overflow: hidden;
+}
+#index_shadowtop {
+    /*background: url(../imgs/index_shadowtop.png) no-repeat;*/
+    background-size: 100% 100%;
+    height: 62%;
+    width: 100%;
+    top: 0px;
+    position: absolute;
+}
+
+#index_shadowmid {
+    float: left;
+    bottom: 0px;
+    background: url(../imgs/index_shadowmid.png);
+    height: 35%;
+    width: 25%;
+    background-size: cover;
+}
+
+.button {
+        border-radius: 6px;
+    background-color: transparent;
+    opacity: 0.82;
+    width: 130px;
+    height: 35px;
+    color: white;
+    line-height: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    border: 1.5px solid #f2bd20;
+    margin: 10px 20px;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.title img{
+    width: 75%;
+    margin-left: 50px;
+}
+.header_main{
+    transform: skewX(30deg);
+    height: 100%;
+    box-shadow: 8px 8px 26.97px -9.97px rgba(56, 56, 56, 0.34);
+    position: relative;
+    left: 6%;
+}
+.subtitle {
+    font-size: 14px;
+    font-family: "YouYuan";
+    text-align: center;
+        line-height: 20px;
+    color: rgb(51, 51, 51);
+}
+
+.header {
+    position: absolute;
+    top: 20%;
+    box-shadow: -9px -12px 26.97px -9.97px rgba(56, 56, 56, 0.34);
+    right: 10%;
+    width: 55%;
+    height: 35%;
+    transform: skewX(-30deg);
+    padding-top: 20px;
+}
+.button:hover{
+    background-color: #f2bd20;
+}
+.button:hover a{
+    color:#000;
+ }
+ .main{
+   margin-top: 30px;
+    text-align: right;
+    cursor: pointer;
+}
+
+h3,h4 {
+    margin: 18px;
+}
+#index_shadowmid{
+    bottom: 0px;
+    position: absolute;
+}

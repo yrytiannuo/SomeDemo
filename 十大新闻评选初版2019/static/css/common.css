@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'STHeiti';
+    src: url('../font/STHeiti Light.ttc');
+}
+
+html {
+    background: url(../imgs/index_bkground1.png) no-repeat;
+    background-size: 100% 110%;
+    background-position-y: -30px;
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+}
+
+.nav_logobkg{
+  position: absolute;
+  top:0px;
+   background: url(../imgs/yellowbg.png);
+    height:66px;
+    width: 400px;
+        background-size: 100% 100%;
+        background-repeat:no-repeat;
+          z-index: 80;
+}
+.nav_logo{
+position: absolute;
+right: 38px;
+bottom: 8px;
+height:35px;
+display: block;
+z-index: 90;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+.navfirst{
+   background: url(../imgs/nav1.png);
+  position: absolute;
+  left: 0px;
+  top: 18px;
+  width: 100%;
+  height: 42px;
+  z-index: 70;
+padding-right: 250px;
+box-sizing:border-box;
+}
+.navfirst a{
+    color: white;
+      opacity: 1.0;
+        float: right;
+        font-size: 0.85rem;
+        padding: 12px;
+        font-weight: 500;
+}
+.navfirst a.active{
+    color: rgb(255, 199, 34);
+}
+.footer{
+    bottom: 0px;
+    z-index: 70;
+    position: absolute;
+    background-color: #363533;
+    width: 100%;
+    color: white;
+    height: 35px;
+        font-size: 0.75rem;
+        padding:10px 0px;
+}
+.footer p{
+  text-align: center;
+  margin: 3px;
+}
+.footer .noe_left{
+  height: 55px;
+  position: absolute;
+  right: 0;
+  top:-10px;
+}.footer .noe_left img{
+  height: 62px;
+}
+li{
+    list-style-type:none;
+}

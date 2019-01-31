@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2017年度十大新闻-新闻事件</title>
+        <link rel="stylesheet" href="./static/css/common.css">
+    <link rel="stylesheet" href="./static/css/nav.css">
+        <link rel="stylesheet" href="./static/css/pics.css">
+</head>
+
+<body>
+    <nav class="navfirst">
+        <a class="active" href="pics.html">新闻图片</a>
+        <a  href="news.html">新闻事件</a>
+        <a  href="#">首页</a>
+    </nav>
+    <div class="nav_logobkg">
+        <img class="nav_logo" src="./static/imgs/logo.png"/>
+        </div>
+        <!-- 最上最上导航 -->
+        <div class="navsub_bk">
+            <div class="navsub_left" ></div>
+            <div class="navsub_right">
+                            <nav class="navsub">
+                <a  href="index.html">首页</a>
+                <a class="active next" href="news.html">  新闻图片</a>
+            </nav>
+            </div>
+        </div>
+        <!-- 最上子导航 -->
+        <div class="content">
+        	<div class="band"><div class="rule">投票规则</div><div class="text">为展示成就，振奋精神，党委宣传部、新闻中心开展了2017年学校十大新闻的评选活动。 网站投票每次选取的新闻不能超过10条，每人</div></div>
+        	        <div class="navthird">
+        	        	<span></span>
+        	        	<span>共22条</span>
+        	        	<span>1</span>
+        	        	<span class="activepage">2</span>
+        	        	<span>3</span>
+        	        	<span>4</span>
+        	        	<span>5</span>
+        	        	<span>6</span>
+        	        	<span class="page">上一页</span>
+        	        	<span class="page now">第2页</span>
+        	        	<span class="page">下一页</span>
+        	        	<span></span>
+        	        	<span></span>
+        </div>
+        <div class="main">
+        <ul>
+
+                        <li>
+                        	<div class="triangle"><span class="number">1</span></div>
+                        		<div class="trianglemore"><span class="number">1</span></div>
+       <img src="static/imgs/photo.png" alt="">
+       <p>一号选手</p>
+       <p>摄影：<span>某某</span></p>
+        </li>
+                        <li>
+                        	<div class="triangle"><span class="number">1</span></div>
+                        		<div class="trianglemore"><span class="number">1</span></div>
+       <img src="static/imgs/photo.png" alt="">
+       <p>一号选手</p>
+       <p>摄影：<span>某某</span></p>
+        </li>
+                        <li>
+                        	<div class="triangle"><span class="number">1</span></div>
+                        		<div class="trianglemore"><span class="number">1</span></div>
+       <img src="static/imgs/photo.png" alt="">
+       <p>一号选手</p>
+       <p>摄影：<span>某某</span></p>
+        </li>
+
+                        <li>
+                        	<div class="triangle"><span class="number">1</span></div>
+                        		<div class="trianglemore"><span class="number">1</span></div>
+       <img src="static/imgs/photo.png" alt="">
+       <p>一号选手</p>
+       <p>摄影：<span>某某</span></p>
+        </li>
+
+
+                         <li>
+                        	<div class="triangle"><span class="number">1</span></div>
+                        		<div class="trianglemore"><span class="number">1</span></div>
+       <img src="static/imgs/photo.png" alt="">
+       <p>一号选手</p>
+       <p>摄影：<span>某某</span></p>
+        </li>
+                         <li>
+                        	<div class="triangle"><span class="number">1</span></div>
+                        		<div class="trianglemore"><span class="number">1</span></div>
+       <img src="static/imgs/photo.png" alt="">
+       <p>一号选手</p>
+       <p>摄影：<span>某某</span></p>
+        </li>
+                        <li>
+                        	<div class="triangle"><span class="number">1</span></div>
+                        		<div class="trianglemore"><span class="number">1</span></div>
+       <img src="static/imgs/photo.png" alt="">
+       <p>一号选手</p>
+       <p>摄影：<span>某某</span></p>
+        </li>  
+                                <li>
+                        	<div class="triangle"><span class="number">1</span></div>
+                        		<div class="trianglemore"><span class="number">1</span></div>
+       <img src="static/imgs/photo.png" alt="">
+       <p>一号选手</p>
+       <p>摄影：<span>某某</span></p>
+        </li>   
+                                <li>
+                        	<div class="triangle"><span class="number">1</span></div>
+                        		<div class="trianglemore"><span class="number">1</span></div>
+       <img src="static/imgs/photo.png" alt="">
+       <p>一号选手</p>
+       <p>摄影：<span>某某</span></p>
+        </li>   
+                                <li>
+                        	<div class="triangle"><span class="number">1</span></div>
+                        		<div class="trianglemore"><span class="number">1</span></div>
+       <img src="static/imgs/photo.png" alt="">
+       <p>一号选手</p>
+       <p>摄影：<span>某某</span></p>
+        </li>        
+    </ul>
+
+</div>
+        	
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <p> 中国石油大学（华东） 新闻网</p>
+            <p>维护：信息中心维护：信息中心</p>
+        </div>
+                <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="static/js/jquery.cookie.min.js"></script>
+        <script>
+            var arr = $('.star');
+            var page = $('.p_no_d');
+            console.log(arr);
+            function queryAll(){
+                $.ajax({
+                    type:"get",
+                    url:"http://39.98.57.24:8087/news/get",
+                    dataType:"json",
+                    success:function(data){
+                      console.log(data);
+                    },
+                    error:function(err){
+                      console.log(err);
+                    }
+                });
+            }
+
+
+            queryAll();
+        </script>
+</body>
+
+</html>
